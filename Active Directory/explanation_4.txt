@@ -1,0 +1,6 @@
+Active directory
+
+The problem specifies there is a tree like structure which can be traversed using recursion as we need to find the user within the tree.
+
+Efficiency: O(N)
+Let's say total number of users and groups are N, then we are visiting each node only once and hence the total time3 complexity is O(N)

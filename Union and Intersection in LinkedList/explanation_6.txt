@@ -1,0 +1,23 @@
+Union and intersection
+
+For implementing union for the list, I broke down the steps into the following:
+1. Iterate over first list and add all elements to the result list
+2. Iterate over the second list and add all the elements to the result list
+3. Remove duplicates by iterating over the result
+
+For intersection:
+Iterated over the first list and checked if it is the second list, if yes then added it to the result which was pretty much straight forward.
+
+
+Efficiency:
+Union: O(N square) + O(A) + O(B)
+Let's consider length of list 1 as A and length of list 2 as B.
+Iterating over the first list takes O(A), appending to list3 takes O(1)
+Iterating over second list takes O(B), appending to list3 takes O(1)
+Remove duplicated takes O(N square)
+Hence total time complexity for union is O(N square) + O(A) + O(B)
+
+Intersection: O(A*B)
+Intersection takes O(A*B) as we are iterating over the first list and checking if the item is present in list 2
+Appending to result list the takes O(1)
+

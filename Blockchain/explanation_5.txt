@@ -1,0 +1,8 @@
+Blockchain
+
+Implemented block chain using concept of SinglyLinkedList instead of reference for next node, maintained hash code of previous node
+in the new node.
+
+
+Efficiency: O(1)
+Adding blocks to the Blockchain takes O(1) as we are using concept of a SinglyLinkedList

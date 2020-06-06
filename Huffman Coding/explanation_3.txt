@@ -1,0 +1,43 @@
+Huffman coding
+
+Encoding:
+I had two options, first getting frequencies for each characters using two for loops but that would have caused N times N complexity.
+Also, I would have needed to use a map for storing the key value pairs
+In the past, I tried using the technique to use unicode of characters for solving practice problems and tried to visualize it in this case to check frequency of each characters.
+Observed that doing things n times after n times is better than doing it n times n (iterating over character and check with others).
+Also, used min heap as it has O(N) insertion which results in sorted structure.
+After getting the sorted frequencies with characters, used a method to build huffman tree which is pretty much a code directly created from instructions from task description.
+Used recursion to traverse through the tree and get a map containing character as a key and its binary code as value.
+And then simply used replace to perform replacement of each character with its binary equivalent defined by our huffman tree logic.
+
+Decoding:
+For decoding used recursion to reach the leaf node and add it to the resulted string
+
+
+Efficiency:
+
+## Encoding:
+Let's consider length of input as A and length of unicode character array as B
+iterating over the input string takes O(A)
+iterating over the unicode array takes O(B)
+heappush() takes O(logB) for sorted push
+Total time complexity for function get_sorted_list_of_nodes_with_frequencies(data) is O(A + BlogB)
+
+Let's consider the length of new nodes as C
+build_huffman_tree(nodes) takes O(C) as we use recursion till we reach the last element in the heapq and within it we use heapq pop twice and heap push once.
+Hence the total time complexity for the function build_huffman_tree(nodes) is O(C (logC + logC + logC)) = O(ClogC)
+
+Again Heap pop takes O(logC).
+
+Now for function get_binary_code(data, root), we perform two operations:
+1. Recursively traverse over tree to build the binary code in which takes O(2 to the power C calls) as at each level there would be 2 more calls
+2. Iterating over the resultant map takes O(C * D), where D is the length of the resultant binary code
+
+Hence, the total time complexity for the get_binary_code(data, root) is  O(2 to the power C) + O(C * D)
+
+Total time complexity for the Huffman coding is O(A + BlogB) + O(ClogC) + O(logC) +  O(2 to the power C) + O(C * D)
+
+## Decoding
+Let's consider the length of the input data as A and depth as the resulting tree
+Traversing the input will take O(A) and  recursively traversing through the tree would take O(2 to the power B)
+Total time complexity for decoding is O(A * 2 to the power B)

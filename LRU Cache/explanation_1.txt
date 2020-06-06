@@ -1,0 +1,24 @@
+LRU Cache
+
+First need for LRU cache to work was to use a data structure to store the key-value pairs with fast look up time and thus used python dictionary/map for it
+At first, LRU cache looked like a queue to me where the items will be added to the queue till it is full and then the ones which were first in the queue were older and need to be removed.
+Later, observed that as the name states "Last recently used". When ever an item is fetched from the cache it should be treated as a recently used item and needs to be moved at the last of the list (last of the list has the recently used item)
+
+Efficiency: O(N)
+get() : O(N)
+Checking if a key is in the cache takes O(1) on average
+Removing and appending a key in LinkedList takes O(1), but searching element for removed taked O(N).
+Thus total time complexity for function get() in class LRU Cache is O(1)
+
+set() : O(1)
+Removing an item from front of the DoublyLinkedList takes O(1)
+Again deleting an item from the dictionary takes O(1)
+After that appending item in dictionary and DoublyLinkedList takes O(1)
+
+Thus, total time complexity is O(N)
+
+
+
+
+
+

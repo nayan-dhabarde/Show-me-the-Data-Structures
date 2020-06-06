@@ -1,0 +1,7 @@
+File Recursion
+
+The directory structure has a heirarchy like a tree which can be only traversed with Recursion.
+In order to build the complete path for one leaf node of type file used an array which is filled at the leaf node and returned it to it's parent having the required path
+
+Efficiency: O(N)
+As we visit each node only once the time complexity is O(N) where N is the number of directories and files inside the input directory
